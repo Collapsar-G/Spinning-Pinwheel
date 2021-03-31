@@ -10,9 +10,19 @@
      3.	实现通过键盘对动画的交互控制，包括切换旋转方向、增大旋转速度以及减小旋转速度。
      4.	设计按钮和菜单两个控件，用于动画的交互控制：点击按钮可以切换旋转方向；选择三个菜单项分别可以切换旋转方向、增大旋转速度以及减小旋转速度。
 
-  *Others:  转载请备注出处，代码部分参考 https://github.com/Goden-Yang/OpenGL-WindMill
-  * function:
-    1. 
+  *Others:  转载请备注出处，代码部分参考 https://github.com/Goden-Yang/OpenGL-WindMill ，并做出诸多改进
+  * 
+  * Function:
+    1. void reverse()：风车旋转变向；
+    2. void speedUp()：增大旋转速度；
+    3. void speedDown()：降低旋转速度；
+    4. void rotate()：旋转；
+    5. void printCharater(const char* str)：按钮上显示文字；
+    6. struct button：按钮部分，模拟button点击效果；
+    7. void mouseFunc(GLint btn, GLint sta, int x, int y)：按钮和鼠标交互；
+    8. void subFunc(GLint data)//void creatMenu()：右键菜单；
+    9. void keyBoard(unsigned char key, int x, int y)：键盘交互；
+    10. void drawPinwheel()：风车部分；
  
 **********************************************************************************/
 #include <iostream>
@@ -252,15 +262,15 @@ void drawPinwheel()
 //initialize
 void Init()
 {
-    glEnable(GL_DEPTH_TEST );//开启更新深度缓冲区的功能
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//清除色彩缓存和深度缓存
+    glEnable(GL_DEPTH_TEST );
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(0.77, 0.80, 0.84, 0.19);
-    glMatrixMode(GL_PROJECTION);//声明接下来对投影进行操作
-    glLoadIdentity();//用一个4x4的单位矩阵来替换当前矩阵,但不会改变矩阵模式
-    gluPerspective(20, 1, 1, 50);
-    glMatrixMode(GL_MODELVIEW);//声明接下来对模型进行操作
+    glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);//设置相机
+    gluPerspective(20, 1, 1, 50);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
     glShadeModel(GL_SMOOTH);
     pBtn = new button;
     pBtn->cleck = false;
