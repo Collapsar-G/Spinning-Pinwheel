@@ -1,4 +1,19 @@
-﻿#include <iostream>
+﻿/*********************************************************************************
+  *Copyright(C),None
+  *FileName:  OpenGLDemo.cpp
+  *Author:  Collapsar-G
+  *Version:  1.0.0
+  *Date:  2021.3.31
+  *Description:  实现了
+     1. 构建且渲染一个3D风车模型（如下图所例示）。其中，三个叶片（包括中间的黄色三角形）在一个2D平面上，手柄在另外一个离相机更近的2D平面上。三个叶片、中心的三角形、手柄分别用不同的颜色显示。
+     2. 实现风车的旋转动画。要求风车的三个叶片以及中间的黄色三角形（在其所在平面上）一起绕着中心一点不停旋转，且将此动画渲染出来。
+     3.	实现通过键盘对动画的交互控制，包括切换旋转方向、增大旋转速度以及减小旋转速度。
+     4.	设计按钮和菜单两个控件，用于动画的交互控制：点击按钮可以切换旋转方向；选择三个菜单项分别可以切换旋转方向、增大旋转速度以及减小旋转速度。
+
+  *Others:  转载请备注出处
+ 
+**********************************************************************************/
+#include <iostream>
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -10,9 +25,9 @@
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 using namespace std;
 
-double angle = 0;//rotate degree
+double angle = 0;
 double speed = 0.3;
-double Acceleration = 0.3;//acceleration of velocity
+double Acceleration = 0.3;
 
 
 
