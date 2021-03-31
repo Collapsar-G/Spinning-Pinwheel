@@ -1,0 +1,20 @@
+﻿  OpenGLDemo.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: “APIENTRY”: 宏重定义
+E:\materials\graphics\OpenGLDemo\packages\nupengl.core.0.1.0.1\build\native\include\GLFW\glfw3.h(92): message : 参见“APIENTRY”的前一个定义
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(47,30): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(60,1): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(67,1): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(68,1): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(69,1): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(70,1): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(149,15): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(154,38): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(162,38): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(179,38): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(196,38): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(215,28): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(216,29): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(217,32): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(218,31): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(240,40): warning C4305: “参数”: 从“double”到“GLclampf”截断
+  OpenGLDemo.vcxproj -> E:\materials\graphics\OpenGLDemo\x64\Debug\OpenGLDemo.exe

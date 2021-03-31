@@ -10,46 +10,92 @@
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 using namespace std;
 
-double Rdgr = 0;//rotate degree
-double velocityAcc = 0;//acceleration of velocity
-double incresement = 0.3;
+double angle = 0;//rotate degree
+double speed = 0.3;
+double Acceleration = 0.3;//acceleration of velocity
 
 
-//function part(speed constro & spining direction reverse)
+
 void reverse()
 {
-    velocityAcc = -velocityAcc;
+    speed = -speed;
 }
 
 void speedUp()
 {
-    if (velocityAcc >= 0)velocityAcc += incresement;
-    else velocityAcc -= incresement;
+    if (speed >= 0)speed += Acceleration;
+    else speed -= Acceleration;
 }
 
 void speedDown()
 {
-    if (velocityAcc >= 0) velocityAcc -= incresement;
-    else velocityAcc += incresement;
+    if (speed >= 0) speed -= Acceleration;
+    else speed += Acceleration;
 }
 
 void rotate()
 {
-    Rdgr += velocityAcc;
-    if (Rdgr > 360) Rdgr = 0;
+    angle += speed;
+    if (angle > 360) angle = 0;
     glutPostRedisplay();
 }
 
 //button part
+
 void printCharater(const char* str)
 {
     glRasterPos2f(-0.06, 0.74);
     for (int i = 0; i < strlen(str); i++) glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *(str + i));
 }
+struct button
+{
+    char* str = new char[100];
+    bool cleck;
+    void rev() {
+       
+        glPushMatrix();
+        
+        if (cleck)
+        {
+            glScalef(0.98, 0.98, 1.0);
+        }
+        //button
+        glColor3f(0, 0, 0);
+        printCharater("Reverse");
+        glColor3f(1, 1, 1);
+        glBegin(GL_QUADS);
+        glVertex3f(-0.1, 0.8, 0);
+        glVertex3f(0.1, 0.8, 0);
+        glVertex3f(0.1, 0.7, 0);
+        glVertex3f(-0.1, 0.7, 0);
+        glEnd();
 
+        
+        glPopMatrix();
+    }
+    
+
+};
+button* pBtn;
 void mouseFunc(GLint btn, GLint sta, int x, int y)
 {
-    if (btn == GLUT_LEFT_BUTTON && sta == GLUT_DOWN)
+
+    if (btn == GLUT_LEFT_BUTTON)
+        switch (sta)
+        {
+            case GLUT_DOWN:
+            {
+                if (x >= 360 && x <= 440 && y >= 40 && y <= 80) {
+                    reverse();
+                    pBtn->cleck = true;
+                }
+                break;
+            }
+            case GLUT_UP:
+            {
+                pBtn->cleck = false;
+            }
+        }
         if (x >= 360 && x <= 440 && y >= 40 && y <= 80) { 
             reverse();
         }
@@ -100,7 +146,7 @@ void drawPinwheel()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glPushMatrix();
-    glRotatef(Rdgr, 0, 0, 1);
+    glRotatef(angle, 0, 0, 1);
     glScalef(1, 1, 1);
     //中心黄色部分
     glColor3f(1, 1, 0);
@@ -174,18 +220,8 @@ void drawPinwheel()
 
     glPopMatrix();
 
-    //button text
-    glColor3f(0, 0, 0);
-    printCharater("Reverse");
-
-    //button
-    glColor3f(1, 1, 1);
-    glBegin(GL_QUADS);
-    glVertex3f(-0.1, 0.8, 0);
-    glVertex3f(0.1, 0.8, 0);
-    glVertex3f(0.1, 0.7, 0);
-    glVertex3f(-0.1, 0.7, 0);
-    glEnd();
+    //button 
+    pBtn->rev();
 
     glPopMatrix();
 
@@ -208,14 +244,17 @@ void Init()
     glMatrixMode(GL_MODELVIEW);//声明接下来对模型进行操作
     glLoadIdentity();
     gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);//设置相机
+    glShadeModel(GL_SMOOTH);
+    pBtn = new button;
+    pBtn->cleck = false;
 }
 
 int main(int argc, char* argv[]) //
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-    glutInitWindowSize(800, 800);
-    glutInitWindowPosition(300, 30);
+    glutInitWindowSize(700, 700);
+    glutInitWindowPosition(300, 100);
     glutCreateWindow("Spinning Pinwheel");
     glEnable(GL_DEPTH_TEST | GL_LINE_SMOOTH | GL_POLYGON_SMOOTH | GL_POLYGON_STIPPLE);
 
