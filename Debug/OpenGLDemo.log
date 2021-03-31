@@ -1,0 +1,20 @@
+﻿  OpenGLDemo.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: “APIENTRY”: 宏重定义
+E:\materials\graphics\OpenGLDemo\packages\nupengl.core.0.1.0.1\build\native\include\GLFW\glfw3.h(92): message : 参见“APIENTRY”的前一个定义
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(46,30): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(47,23): warning C4018: “<”: 有符号/无符号不匹配
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(103,15): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(108,38): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(116,38): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(133,38): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(150,38): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(169,28): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(170,29): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(171,32): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(172,31): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(184,28): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(185,27): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(186,27): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(187,28): warning C4305: “参数”: 从“double”到“GLfloat”截断
+E:\materials\graphics\OpenGLDemo\OpenGLDemo.cpp(204,40): warning C4305: “参数”: 从“double”到“GLclampf”截断
+  OpenGLDemo.vcxproj -> E:\materials\graphics\OpenGLDemo\Debug\OpenGLDemo.exe
